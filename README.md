@@ -6,7 +6,7 @@ documented in the standard Library.
 
 ## Installation
 
-	$ go get bitbucket.org/ronoaldo/serveit
+	$ go get ronoaldo.gopkg.net/serveit
 
 ## Running
 
