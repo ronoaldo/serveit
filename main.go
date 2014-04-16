@@ -9,19 +9,22 @@ import (
 )
 
 var port string
+var dir string
 
 func init() {
-	flag.StringVar(&port, "port", "8080", "Serve port number")
-}
-
-func main() {
-	flag.Parse()
-	fmt.Println("Server start on:", port)
-
 	pwd, err := os.Getwd()
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	log.Fatal(http.ListenAndServe(":"+port, http.FileServer(http.Dir(pwd))))
+	flag.StringVar(&port, "port", "8080", "Serve port number")
+	flag.StringVar(&dir, "dir", pwd, "Directory to be served")
+}
+
+func main() {
+	flag.Parse()
+	fmt.Println("Server start on:", port)
+	fmt.Println("Serving:", dir)
+
+	log.Fatal(http.ListenAndServe(":"+port, http.FileServer(http.Dir(dir))))
 }
