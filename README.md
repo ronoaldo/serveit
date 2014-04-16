@@ -13,6 +13,7 @@ documented in the standard Library.
 If your `$GOBIN` is in your `$PATH`:
 
 	$ serveit
+	$ serveit -port
 
 It starts serving the local directory at port 8080. Options to
 change port/root comming in the next releases.
