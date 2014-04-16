@@ -8,15 +8,20 @@ import (
 	"os"
 )
 
+var port string
+
+func init() {
+	flag.StringVar(&port, "port", "8080", "Serve port number")
+}
+
 func main() {
-	port := flag.String("port", "8080", "Serve port number")
 	flag.Parse()
-	fmt.Println("Server start on:", *port)
+	fmt.Println("Server start on:", port)
 
 	pwd, err := os.Getwd()
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	log.Fatal(http.ListenAndServe(":"+*port, http.FileServer(http.Dir(pwd))))
+	log.Fatal(http.ListenAndServe(":"+port, http.FileServer(http.Dir(pwd))))
 }
