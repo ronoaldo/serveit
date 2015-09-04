@@ -1,4 +1,4 @@
-package main
+package main // import "ronoaldo.gopkg.net/serveit"
 
 import (
 	"flag"
