@@ -1,3 +1,23 @@
+// Copyright 2014 Ronoaldo JLP <ronoaldo@gmail.com>, Filipe Peixoto <filipenos@gmail.com>
+// Licensed under the Apache License, Version 2.0
+
+/*
+Command serveit is a minimalistic static content service.
+
+Usage
+
+To install, provided that you have Go installed and GOPATH setup:
+
+	go get ronoaldo.gopkg.net/serveit
+
+To execute, just run the compiled binary:
+
+	serveit
+
+The server binds on port 8080 by default, and serves the
+current directory over HTTP. Use with care, if your host
+is public reachable.
+*/
 package main // import "ronoaldo.gopkg.net/serveit"
 
 import (
